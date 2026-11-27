@@ -1,0 +1,81 @@
+{
+  "schema_version": 3,
+  "problem": "post-quantum-signatures",
+  "kind": "research-note",
+  "title": "Optimal mixed chain lengths for a fixed verifier budget",
+  "claim": "For n fixed-length public chains with H endpoint steps in total and a worst-case verifier cap V, the maximum size of a deterministic injective incomparable code is the coefficient at min(V,floor(H/2)) for the balanced allocation of H among n chains. For 2^256 digests and V=442 the exact minimum totals are 990 for 66 elements and 953 for 67. The corresponding optimal worst-case signing costs are 548 and 511 steps. The note proves both bounds for arbitrary nonnegative endpoint lengths and certifies six further rows.",
+  "novelty": "Track PR #7 fixes 66 equal chains of length 15. This note varies the entire endpoint geometry, proves a coefficientwise exchange bound, and certifies strict failure at each preceding total. It quantifies the signing work and payload cost of adding an element. The chain decomposition, use of constant-sum codes and enumerative coding are classical.",
+  "prior_art": [
+    {
+      "reference": "https://research.tue.nl/en/publications/on-the-set-of-divisors-of-a-number/",
+      "relationship": "The symmetric-chain theorem for products of finite chains supplies the width bound for a fixed endpoint vector."
+    },
+    {
+      "reference": "https://eprint.iacr.org/2023/850",
+      "relationship": "Constant-sum encoding and enumeration are established constructions. Here they realize the extremal layer after optimizing the public lengths."
+    },
+    {
+      "reference": "https://eprint.iacr.org/2025/889",
+      "relationship": "Section 5 compares verification costs and uniform-base parameter choices. This note optimizes a fixed total across heterogeneous endpoints for injective deterministic codes."
+    },
+    {
+      "reference": "https://github.com/MuncleUscles/post-quantum-signatures/pull/7",
+      "relationship": "Track result pr-7-44ae19c2bf86-e7c37fb31c45 proves the 442-step cutoff for fixed length-15 endpoints. It motivated the verifier cap used here. The present argument independently derives the mixed-endpoint bounds."
+    },
+    {
+      "reference": "https://www.rfc-editor.org/rfc/rfc8391#section-3.1",
+      "relationship": "The WOTS+ parameter formulas give a standardized chain-payload baseline at 32 bytes per element and radix 16."
+    }
+  ],
+  "research_direction": "Optimize the endpoint layout and signing work at a fixed signature width and worst-case verifier cap.",
+  "provenance": {
+    "mode": "integration",
+    "sources": [
+      {
+        "reference": "https://research.tue.nl/en/publications/on-the-set-of-divisors-of-a-number/",
+        "title": "On the set of divisors of a number",
+        "authors": [
+          "N. G. de Bruijn",
+          "C. van Ebbenhorst Tengbergen",
+          "D. Kruyswijk"
+        ],
+        "relationship": "The symmetric-chain theorem for products of finite chains supplies the width bound for a fixed endpoint vector.",
+        "priority_evidence": "Nieuw Archief voor Wiskunde, 1951."
+      },
+      {
+        "reference": "https://eprint.iacr.org/2023/850",
+        "title": "Revisiting the Constant-sum Winternitz One-time Signature with Applications to SPHINCS+ and XMSS",
+        "authors": [
+          "Kaiyi Zhang",
+          "Hongrui Cui",
+          "Yu Yu"
+        ],
+        "relationship": "Constant-sum encoding and enumeration are established constructions. Here they realize the extremal layer after optimizing the public lengths.",
+        "priority_evidence": "IACR Cryptology ePrint Archive, 2023/850."
+      },
+      {
+        "reference": "https://eprint.iacr.org/2025/889",
+        "title": "At the Top of the Hypercube – Better Size-Time Tradeoffs for Hash-Based Signatures",
+        "authors": [
+          "Dmitry Khovratovich",
+          "Mikhail Kudinov",
+          "Benedikt Wagner"
+        ],
+        "relationship": "Section 5 compares verification costs and uniform-base parameter choices. This note optimizes a fixed total across heterogeneous endpoints for injective deterministic codes.",
+        "priority_evidence": "IACR Cryptology ePrint Archive, 2025/889."
+      }
+    ],
+    "discovery_basis": "I inspected the track guide, research branch and research PRs, followed the cited constant-sum and hypercube papers, and searched for unequal-chain Winternitz bounds and product-of-chains decompositions. Attribution is limited to the synthesis, arithmetic and comparison in this note. The literature search is non-exhaustive."
+  },
+  "evidence": {
+    "kind": "research-note",
+    "artifact_path": "research/notes/mixed-chain-endpoint-budgets.md",
+    "reproduce": "Run pnp check research/submissions/mixed-chain-endpoint-budgets.json with the pinned client, then execute the Python block in the matching note with Python 3.12 or newer. It computes every lower and upper boundary by positive-coefficient convolution and by signed binomial inclusion-exclusion. The note supplies the extremal proof."
+  },
+  "dependencies": [],
+  "attribution": {
+    "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
+    "contributions": "Codex, working for Edgars, derived the endpoint exchange reduction, the joint signing and verification consequence, the table and the two integer checks, and wrote the note. Classical results and the track comparison are cited."
+  },
+  "limitations": "Counts forward hashes from seeds and revealed elements for injective, deterministic digests. Endpoints are public and fixed within a scheme. No randomized or collision-allowing encoding, side-channel or quantum security result, aggregation prover timing or production implementation is established. The arithmetic is reproducible Python. The note is submitted as nonformal evidence."
+}

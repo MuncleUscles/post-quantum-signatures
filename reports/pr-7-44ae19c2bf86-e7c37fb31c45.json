@@ -96635,8 +96635,16 @@
           "fee_accounting": {
             "sender": "0xD68e86e19fBe219E86018dE08b6a45DDcCE4D8e8",
             "source": "submission",
-            "status": "active",
-            "refunds": [],
+            "status": "settled",
+            "refunds": [
+              {
+                "amount": "149916528000014706",
+                "reason": "finalized",
+                "message": 0,
+                "primary": "149916528000014706",
+                "appealBond": 0
+              }
+            ],
             "top_ups": [
               {
                 "amount": "150000000000015529",
@@ -96677,7 +96685,7 @@
               "storageUnitPrice": 250000000
             },
             "paid_fee_value": "150000000000015529",
-            "total_refunded": 0,
+            "total_refunded": "149916528000014706",
             "policy_snapshot": {
               "intrinsic_gas": 21000,
               "extra_exec_gas": 210000,
@@ -96718,19 +96726,140 @@
               "leaderTimeunitsAllocation": 100,
               "validatorTimeunitsAllocation": 200
             },
-            "primary_fee_spent": 0,
+            "primary_fee_spent": 83472000000823,
+            "settlement_reason": "finalized",
+            "settlement_rounds": [
+              {
+                "rule": "normal",
+                "round": 0,
+                "outcome": "Accepted",
+                "rotations": 0,
+                "timeUnitAmount": 700
+              }
+            ],
+            "actual_final_round": 0,
             "appeal_bonds_total": 0,
             "message_fee_budget": 0,
             "primary_fee_budget": "150000000000015529",
             "required_fee_value": "150000000000015529",
             "allocation_consumed": {},
+            "appeal_profit_spent": 0,
             "funding_overlay_bps": 1500,
             "message_allocations": [],
             "appeal_funding_total": 0,
-            "execution_fee_report": {},
+            "execution_fee_report": {
+              "messageFees": {
+                "budget": 0,
+                "remaining": 0,
+                "meteringDelta": 0,
+                "declaredConsumed": 0,
+                "declaredRefunded": 0,
+                "genvmMeteredConsumed": 0
+              },
+              "genvmBuckets": {
+                "layout": "genvm-v0.3",
+                "buckets": [
+                  {
+                    "name": "execution",
+                    "unit": "fee",
+                    "index": 0,
+                    "consumed": 0
+                  },
+                  {
+                    "name": "message",
+                    "unit": "fee",
+                    "index": 1,
+                    "consumed": 0
+                  },
+                  {
+                    "name": "nondeterministicOutputBytes",
+                    "unit": "bytes",
+                    "index": 2,
+                    "consumed": 0
+                  },
+                  {
+                    "name": "submittedMessageBytes",
+                    "unit": "bytes",
+                    "index": 3,
+                    "consumed": 0
+                  },
+                  {
+                    "name": "submittedMessageCount",
+                    "unit": "count",
+                    "index": 4,
+                    "consumed": 0
+                  }
+                ],
+                "message": 0,
+                "execution": 0,
+                "totalExecution": 0,
+                "totalWithMessage": 0,
+                "submittedMessageBytes": 0,
+                "submittedMessageCount": 0,
+                "executionBudgetOverrun": 0,
+                "executionBudgetExceeded": false,
+                "executionBudgetPerRound": "25000000000000000",
+                "executionBudgetRemaining": "25000000000000000",
+                "nondeterministicOutputBytes": 0
+              },
+              "proposalReceipt": {
+                "fee": 83472000000000,
+                "estimatedGas": 333888,
+                "receiptBytes": 2243,
+                "eqBlocksOutputsLength": 1219
+              },
+              "receiptGasPrice": 250000000,
+              "executionMetering": {
+                "chargeableExecutionFee": 83472000000000,
+                "genvmReportedExecution": 0,
+                "genvmDeltaFromChargeable": -83472000000000
+              },
+              "totalEstimatedFee": 83472000000000,
+              "chargeableExecution": {
+                "layout": "consensus-chargeable",
+                "buckets": [
+                  {
+                    "name": "receipt",
+                    "unit": "fee",
+                    "index": 0,
+                    "consumed": 83472000000000
+                  },
+                  {
+                    "name": "storage",
+                    "unit": "fee",
+                    "index": 1,
+                    "consumed": 0
+                  }
+                ],
+                "receipt": 83472000000000,
+                "storage": 0,
+                "totalExecution": 83472000000000,
+                "totalWithMessage": 83472000000000,
+                "executionBudgetOverrun": 0,
+                "executionBudgetExceeded": false,
+                "executionBudgetPerRound": "25000000000000000",
+                "executionBudgetRemaining": "24916528000000000"
+              },
+              "historicalReceiptFees": {
+                "attempts": [
+                  {
+                    "round": 0,
+                    "attempt": 0,
+                    "receiptFee": 83472000000000,
+                    "leaderTimeout": false,
+                    "receiptGasPrice": 250000000,
+                    "deterministicViolation": false
+                  }
+                ],
+                "totalExecution": 83472000000000,
+                "finalStorageFee": 0,
+                "receiptFeeTotal": 83472000000000
+              },
+              "totalStudioMeteredFee": 78852000000000
+            },
             "message_fee_consumed": 0,
             "message_fee_refunded": 0,
-            "primary_fee_refunded": 0,
+            "primary_fee_refunded": "149916528000014706",
             "primary_fee_required": "150000000000015529",
             "selection_pool_count": 20,
             "message_phase_emitted": {
@@ -96739,8 +96868,100 @@
             },
             "message_value_effects": {},
             "execution_budget_total": "150000000000000000",
-            "execution_fee_consumed": 0,
+            "execution_fee_consumed": 83472000000000,
+            "fee_refund_settlements": [
+              {
+                "amount": "149916528000012500",
+                "source": "primary-fifo",
+                "recipient": "0xD68e86e19fBe219E86018dE08b6a45DDcCE4D8e8"
+              },
+              {
+                "amount": 2206,
+                "source": "overlay-fifo",
+                "recipient": "0xD68e86e19fBe219E86018dE08b6a45DDcCE4D8e8"
+              }
+            ],
+            "recommended_fee_preset": {
+              "source": "simulation",
+              "feeValue": 600998400015529,
+              "observed": {
+                "executionFee": 83472000000000,
+                "messageFeeBudget": 0,
+                "totalEstimatedFee": 83472000000000,
+                "declaredMessageFees": 0,
+                "totalStudioMeteredFee": 78852000000000,
+                "genvmExecutionRequired": 0,
+                "externalMessageReserved": 0
+              },
+              "paddingBps": 12000,
+              "distribution": {
+                "rotations": [
+                  5
+                ],
+                "appealRounds": 0,
+                "totalMessageFees": 0,
+                "executionConsumed": 0,
+                "receiptFeeMaxGasPrice": 300000000,
+                "storageFeeMaxGasPrice": 300000000,
+                "maxPriceGenPerTimeUnit": 2,
+                "executionBudgetPerRound": 100166400000000,
+                "leaderTimeunitsAllocation": 100,
+                "validatorTimeunitsAllocation": 200
+              },
+              "messageBudgetMode": "current",
+              "messageAllocations": [],
+              "numOfInitialValidators": 5
+            },
+            "appeal_bond_settlements": [],
+            "appeal_profit_requested": 0,
             "external_message_events": [],
+            "genvm_fee_bucket_report": {
+              "layout": "genvm-v0.3",
+              "buckets": [
+                {
+                  "name": "execution",
+                  "unit": "fee",
+                  "index": 0,
+                  "consumed": 0
+                },
+                {
+                  "name": "message",
+                  "unit": "fee",
+                  "index": 1,
+                  "consumed": 0
+                },
+                {
+                  "name": "nondeterministicOutputBytes",
+                  "unit": "bytes",
+                  "index": 2,
+                  "consumed": 0
+                },
+                {
+                  "name": "submittedMessageBytes",
+                  "unit": "bytes",
+                  "index": 3,
+                  "consumed": 0
+                },
+                {
+                  "name": "submittedMessageCount",
+                  "unit": "count",
+                  "index": 4,
+                  "consumed": 0
+                }
+              ],
+              "message": 0,
+              "execution": 0,
+              "totalExecution": 0,
+              "totalWithMessage": 0,
+              "submittedMessageBytes": 0,
+              "submittedMessageCount": 0,
+              "executionBudgetOverrun": 0,
+              "executionBudgetExceeded": false,
+              "executionBudgetPerRound": "25000000000000000",
+              "executionBudgetRemaining": "25000000000000000",
+              "nondeterministicOutputBytes": 0
+            },
+            "time_unit_overlay_spent": 123,
             "untracked_contributions": 0,
             "activation_prices_locked": true,
             "message_effect_delivered": {},
@@ -96777,7 +96998,14 @@
             "appeal_bonds_payout_total": 0,
             "message_allocation_policy": "open",
             "num_of_initial_validators": 5,
-            "genvm_fee_consumed_buckets": [],
+            "storage_fee_dust_refunded": 0,
+            "genvm_fee_consumed_buckets": {
+              "message_fee": 0,
+              "nondet_outputs": 0,
+              "execution_data_gas": 0,
+              "submitted_messages": 0,
+              "submitted_messages_count": 0
+            },
             "genvm_message_fee_consumed": 0,
             "message_consumption_events": [
               {
@@ -96789,16 +97017,32 @@
             ],
             "message_effect_descriptors": {},
             "appeal_bond_sender_refunded": 0,
+            "storage_fee_recipient_count": 5,
+            "time_unit_overlay_requested": 123,
             "external_message_fee_payouts": [],
             "external_message_fee_settled": 0,
             "untracked_contribution_pools": {},
             "external_message_fee_reserved": 0,
+            "historical_execution_attempts": [
+              {
+                "round": 0,
+                "attempt": 0,
+                "receiptFee": 83472000000000,
+                "leaderTimeout": false,
+                "receiptGasPrice": 250000000,
+                "deterministicViolation": false
+              }
+            ],
             "appeal_charge_surplus_refunded": 0,
-            "execution_fee_consumed_buckets": [],
+            "execution_fee_consumed_buckets": [
+              83472000000000,
+              0
+            ],
             "external_message_fee_remainder": 0,
             "message_allocations_restricted": false,
             "external_message_fee_reimbursed": 0,
-            "message_fees_recorded_at_reveal": true
+            "message_fees_recorded_at_reveal": true,
+            "time_unit_overlay_settlement_bps": 1500
           },
           "fees_distribution": {
             "rotations": [
@@ -96841,7 +97085,7 @@
             "receiptGasPrice": "250000000"
           },
           "consumed": {
-            "executionConsumed": "0",
+            "executionConsumed": "83472000000000",
             "storageFeeUsed": "0",
             "messageFeesConsumed": "0",
             "messageFeesBudgetTotal": "0",
@@ -101290,7 +101534,7 @@
           "signed_rollup_transaction": "0xf903d10180830f424094b7278a61aa25c888815afc32ad3cc52ff24fe575880214e8348c4f3ca9b9036435a251fb0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000d68e86e19fbe219e86018de08b6a45ddcce4d8e8000000000000000000000000ec885d69e74de9509938aaa732d1675161299e5800000000000000000000000000000000000000000000000000000000000000050000000000000000000000000000000000000000000000000000000000000005000000000000000000000000000000000000000000000000000000006b0a1d3500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000014000000000000000000000000000000000000000000000000000000000000002c00000000000000000000000000000000000000000000000000000000000000320000000000000000000000000000000000000000000000000000000000000006400000000000000000000000000000000000000000000000000000000000000c800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000058d15e1762800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000014000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000011e1a3000000000000000000000000000000000000000000000000000000000011e1a300000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000050000000000000000000000000000000000000000000000000000000000000037f6b416005461646a75646963617465046172677315f40170722d372d3434616531396332626638362d653763333766623331633435010000000000000000000000000000000000000000000000000000000000000000000000000000000000008301e481a0f5ebbc1af209c0fe2e23b8bd1d1cf060e174e88281e233dd2cebdd2dd308f72fa07ff9709080c1fbe2dd457e6bc6196d69ce7b3fc09a022558a9921d4d2c584322"
         },
         "value_credited": false,
-        "current_timestamp": "1795821491",
+        "current_timestamp": "1795821503",
         "sender": "0xD68e86e19fBe219E86018dE08b6a45DDcCE4D8e8",
         "recipient": "0xEC885d69e74De9509938aAa732d1675161299E58",
         "created_timestamp": "1795821349",
@@ -101634,7 +101878,7 @@
   },
   "blockedConsensus": false,
   "error": "fetch failed",
-  "updatedAt": "2026-11-27T23:18:18.073Z",
+  "updatedAt": "2026-11-27T23:18:23.049Z",
   "run": "https://github.com/MuncleUscles/post-quantum-signatures/actions/runs/46080518960",
   "record": {
     "adjudication_finished_round": 0,

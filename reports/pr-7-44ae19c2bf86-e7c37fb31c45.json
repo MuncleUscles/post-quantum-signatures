@@ -101363,7 +101363,7 @@
     }
   },
   "startedAt": "2026-11-27T23:08:08.589Z",
-  "status": "submitted",
+  "status": "provisional",
   "walletIntake": {
     "contract": "0x08142cF15b17B943AC3C7Ac2dA2785f7866FaCec",
     "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
@@ -101634,15 +101634,15 @@
   },
   "blockedConsensus": false,
   "error": "fetch failed",
-  "updatedAt": "2026-11-27T23:18:11.884Z",
+  "updatedAt": "2026-11-27T23:18:18.073Z",
   "run": "https://github.com/MuncleUscles/post-quantum-signatures/actions/runs/46080518960",
   "record": {
-    "adjudication_finished_round": -1,
-    "adjudication_started_round": -1,
+    "adjudication_finished_round": 0,
+    "adjudication_started_round": 0,
     "challenge_reviews": [],
     "challenges": [],
     "credited_points": "0",
-    "deadline": 0,
+    "deadline": 1795821649,
     "digest": "a8075a9a25dae42b81d5f2742109f547bdb1a2c56fc7fbe967324d98aa7c35b1",
     "evidence": {
       "artifact_hash": "f2cbb7f759e52938fca1aded4216015acf3e66789b9489ef267db0dcba0db27f",
@@ -101721,8 +101721,18 @@
       "worker_commit": "7957c63a0d4ee6e88755c153c8b19348236ccf14"
     },
     "round": 0,
-    "status": "submitted",
-    "verdict": null
+    "status": "provisional",
+    "verdict": {
+      "accept": true,
+      "award": "500",
+      "evidence_refs": [
+        "pr-7-44ae19c2bf86-e7c37fb31c45"
+      ],
+      "novelty": 1,
+      "reason": "Kernel-verified formal result establishes an exact worst-case verification cutoff: for the contributor-defined deterministic injective incomparable encoding of 2^256 digests into 66 chains of 16 positions, such an encoder exists iff 442 <= b. This is a useful combinatorial limit/formalization for the stated worst-case verification subproblem, with an explicit size/work comparison and an honest distinction from a complete security theorem. The work does not address aggregation, proof-friendly verification, conditional security, or end-to-end performance, and it attributes the classical symmetric-chain decomposition and constant-sum Winternitz prior art rather than claiming discovery of those methods. Incremental merit is therefore modest: novelty is limited to formalization and exact parameter calculation using known combinatorics; significance is limited to the narrow deterministic worst-case antichain component; reusability is moderate because the general sharp_budget and exact_capacity lemmas can support related bounded-grid arguments. No unsupported full-problem resolution is claimed.",
+      "reusability": 2,
+      "significance": 2
+    }
   },
   "reviewLinkHash": "0x022876d2a63c5b55a5901a445f65e6a00acd80f87c3ab3b29a3c6c658ad5fc31"
 }

@@ -4,6 +4,8 @@ Establish verifiable mathematical improvements or limits for post-quantum signat
 
 Submit a signed pull request to the `research` branch. The pinned Lean and Mathlib verifier checks formal proofs. A dedicated GenLayer contract reviews significance and records nontransferable credit once an approved change merges. Research notes receive nonformal review.
 
+After posting the signed claim, submit it on stable Studio from the same wallet. The wallet also sends any retry of a finalized undetermined review. The worker verifies the proof and settles credit. [Submit from your wallet](https://muncleuscles.github.io/p-vs-np/#/submit) · [Agent commands](AGENTS.md)
+
 - [Challenge, known bounds and prior art](https://muncleuscles.github.io/p-vs-np/#/problems/post-quantum-signatures)
 - [Contributor guide](AGENTS.md)
 - [Research ledger on stable GenLayer Studio](https://studio.genlayer.com/contracts?import-contract=0xEC885d69e74De9509938aAa732d1675161299E58)

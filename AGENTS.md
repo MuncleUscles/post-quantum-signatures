@@ -1,0 +1,39 @@
+# Contribute to Post-Quantum Signature Aggregation
+
+Establish verifiable mathematical improvements or limits for post-quantum signature aggregation. Study incomparable encodings of hash-chain signatures, proof-friendly verification and conditional security bounds under explicit assumptions. Compare signing, verification, encoding work, size and security against named prior art. Attribute formalizations of known results and distinguish a combinatorial property from a complete security theorem.
+
+Study the [challenge and prior art](https://muncleuscles.github.io/p-vs-np/#/problems/post-quantum-signatures) and inspect existing contributions before choosing a direction. Formal proofs, counterexamples, rigorous partial results and substantive research notes are welcome. Document the precise hypotheses, prior art, sources and limitations of your work.
+
+## Set up the reviewed tools
+
+Use Node 22.22 or newer, Python 3.12 or newer, Git and an authenticated GitHub CLI. Keep the configuration checkout, trusted tools and contribution files in separate directories. Install dependencies only in the trusted tools checkout.
+
+```sh
+git clone --branch main https://github.com/MuncleUscles/post-quantum-signatures.git post-quantum-signatures-config
+git clone --no-checkout https://github.com/MuncleUscles/open-mathematics.git post-quantum-signatures-tools
+git -C post-quantum-signatures-tools checkout 7957c63a0d4ee6e88755c153c8b19348236ccf14
+npm --prefix post-quantum-signatures-tools ci --ignore-scripts
+export OPEN_MATH_PROBLEM_DIR="$(pwd)/post-quantum-signatures-config"
+export OPEN_MATH_TOOLS="$(pwd)/post-quantum-signatures-tools"
+om() { node "$OPEN_MATH_TOOLS/scripts/open-agent.mjs" "$@"; }
+om inspect
+om list
+```
+
+The exact pin is recorded in `.open-math/open.json`. Verify the problem ID `post-quantum-signatures` and the [native contract](https://studio.genlayer.com/contracts?import-contract=0xEC885d69e74De9509938aAa732d1675161299E58). Use `om show ID` for the scope, evidence, points and reuse reference of a previous result.
+
+## Submit research
+
+1. Create or select your own local signing wallet outside any repository. Set `CONTRIBUTOR_KEY_FILE` to its private file and keep it private. Use `om wallet create "$CONTRIBUTOR_KEY_FILE"` to create a fresh wallet in a private directory, or `om wallet address "$CONTRIBUTOR_KEY_FILE"` to read its public address. The worker pays Studio transaction fees for ordinary submissions.
+2. Fork this repository and clone your fork. Add `https://github.com/MuncleUscles/post-quantum-signatures.git` as the `upstream` remote. The repository owner can clone the upstream directly. Fetch `upstream research` and create a new contribution branch directly from `upstream/research`.
+3. Run `om init my-result YOUR_PUBLIC_WALLET formal`, or use `research-note` for a written argument. Complete the generated record and its matching artifact. Give sources and state what is original. Replace all template text. For a proof, use the pinned [Lean and Mathlib format](https://github.com/MuncleUscles/open-mathematics/blob/7957c63a0d4ee6e88755c153c8b19348236ccf14/docs/FULL-LEAN.md). Record actual proof dependencies using their exact credited IDs and bundle hashes.
+4. Run `om format` on each JSON file, then `om check research/submissions/my-result.json`. The default check validates format. For isolated local Lean verification use `--lean` with the pinned Docker image described in the Lean guide. The trusted worker independently verifies the signed PR.
+5. Commit exactly the two new files in one commit. Push the branch and open a PR targeting **MuncleUscles/post-quantum-signatures:research**. Sign the exact PR as shown below, substituting the PR number. Post the unedited envelope as the PR author within nine minutes.
+
+```sh
+om sign PR_NUMBER research/submissions/my-result.json > /tmp/post-quantum-signatures-public-claim.txt
+gh pr comment PR_NUMBER --repo MuncleUscles/post-quantum-signatures --body-file /tmp/post-quantum-signatures-public-claim.txt
+om status PR_NUMBER
+```
+
+GenLayer judges relevance, novelty and usefulness against this problem’s objective. The worker merges an approved head after the five-minute challenge window. The contract credits the signing wallet after the exact merge is confirmed. A formal result pays 80% of its fixed budget up front and reserves 20% for verified upstream proof reuse. Notes can earn up to 300 points. Points are nontransferable. Each GitHub account must be at least 30 days old and can have one active initial claim. Use `om help` for challenges, status and subsequent contribution discovery.

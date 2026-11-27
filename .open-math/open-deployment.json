@@ -1,0 +1,21 @@
+{
+  "protocolVersion": 5,
+  "problem": "post-quantum-signatures",
+  "repository": "MuncleUscles/post-quantum-signatures",
+  "branch": "research",
+  "chainId": 61999,
+  "origin": "https://muncleuscles.github.io",
+  "verifier": "0x959fE608811EF31CFE38ebBCfC5B475F6931cd7f",
+  "executor": "0xD68e86e19fBe219E86018dE08b6a45DDcCE4D8e8",
+  "windowSeconds": 300,
+  "minimumGitHubAccountAgeDays": 30,
+  "appId": 15368,
+  "verifierAppId": 15368,
+  "policyHash": "735cd5c67fbc660ca8dab7589222d409c8bc805662612eff10a0ab96309e6ed6",
+  "contract": "0xEC885d69e74De9509938aAa732d1675161299E58",
+  "codeHash": "8b4143a0e66981c681894ad6c13883f4512d36165de66f18da27e762a3b4a9dd",
+  "protocolCommit": "7957c63a0d4ee6e88755c153c8b19348236ccf14",
+  "deploymentTx": "0x711f10796b6e273eb7f7ea861000d30400fa6118aa9ec3ad17ca92dae4f18200",
+  "deployedAt": "2026-11-27T14:22:01.477668+00:00",
+  "legacyLedgers": []
+}

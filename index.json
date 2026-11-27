@@ -1,0 +1,37 @@
+{
+  "entries": [
+    {
+      "id": "pr-7-44ae19c2bf86-e7c37fb31c45",
+      "contract": "0xEC885d69e74De9509938aAa732d1675161299E58",
+      "chainId": 61999,
+      "repository": "MuncleUscles/post-quantum-signatures",
+      "pr": 7,
+      "head": "44ae19c2bf8694af5f9aa80ea819baf176ed14ef",
+      "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
+      "policy": "735cd5c67fbc660ca8dab7589222d409c8bc805662612eff10a0ab96309e6ed6",
+      "protocolCommit": "7957c63a0d4ee6e88755c153c8b19348236ccf14",
+      "evidenceKind": "formal",
+      "verification": "verified",
+      "title": "The exact 442-step verification threshold for 66 sixteen-position hash chains",
+      "status": "verifying",
+      "points": "0",
+      "impact": null,
+      "dependencies": [],
+      "report": "reports/pr-7-44ae19c2bf86-e7c37fb31c45.json",
+      "run": "https://github.com/MuncleUscles/post-quantum-signatures/actions/runs/46080518960",
+      "updatedAt": "2026-11-27T23:09:01.998Z",
+      "commentId": 7229856406,
+      "needsResume": true
+    }
+  ],
+  "mode": "live-github-studio",
+  "deployment": {
+    "protocolVersion": 5,
+    "contract": "0xEC885d69e74De9509938aAa732d1675161299E58",
+    "problem": "post-quantum-signatures",
+    "repository": "MuncleUscles/post-quantum-signatures",
+    "branch": "research",
+    "chainId": 61999,
+    "windowSeconds": 300
+  }
+}

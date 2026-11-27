@@ -107579,7 +107579,7 @@
   },
   "blockedConsensus": false,
   "error": "fetch failed",
-  "updatedAt": "2026-11-27T23:23:58.421Z",
+  "updatedAt": "2026-11-27T23:24:06.379Z",
   "run": "https://github.com/MuncleUscles/post-quantum-signatures/actions/runs/46080518960",
   "record": {
     "adjudication_finished_round": 0,
@@ -107695,5 +107695,32 @@
   "outcome": {
     "status": "credited",
     "mergeCommit": "f40803193279db055df6f0a85e6e127ef8edcc85"
+  },
+  "impact": {
+    "allocations": [],
+    "band_points": 33,
+    "budget": 100,
+    "challenge_reviews": [],
+    "challenges": [],
+    "deadline": 0,
+    "downstream": "pr-7-44ae19c2bf86-e7c37fb31c45",
+    "eligible": [],
+    "paid_points": "0",
+    "reason": "No verified direct dependency; the unused reserve returns to the result's contributor.",
+    "recipient_allocations": [],
+    "returned_points": "100",
+    "round": 0,
+    "route_commitments": [
+      {
+        "id": "pr-7-44ae19c2bf86-e7c37fb31c45",
+        "revision": 0,
+        "route_hash": "c760951a7322e95cd354084dabf373b789b2d7e73a05fc7081acba574efdb0c0"
+      }
+    ],
+    "route_commitments_hash": "a3973a3d52854e3db984b17f52e825cc825db48310d53be33f1a6582f1ce0bcd",
+    "route_history": [],
+    "routing_revision": 0,
+    "source_digest": "a8075a9a25dae42b81d5f2742109f547bdb1a2c56fc7fbe967324d98aa7c35b1",
+    "status": "settled"
   }
 }

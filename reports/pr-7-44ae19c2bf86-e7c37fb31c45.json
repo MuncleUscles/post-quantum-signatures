@@ -107577,9 +107577,7 @@
     "verifier": "0x959fE608811EF31CFE38ebBCfC5B475F6931cd7f",
     "signature": "0x792015b98fb4d924ac66c38a95503d6b0207283472d44d5d4f19eec3a14a97cd382610c4f1729828d31abe02e03bd4d49e1446e87f2732f5d497ff244a5715a91c"
   },
-  "blockedConsensus": false,
-  "error": "fetch failed",
-  "updatedAt": "2026-11-27T23:24:18.949Z",
+  "updatedAt": "2026-11-27T23:24:24.602Z",
   "run": "https://github.com/MuncleUscles/post-quantum-signatures/actions/runs/46080518960",
   "record": {
     "adjudication_finished_round": 0,
@@ -107722,5 +107720,23 @@
     "routing_revision": 0,
     "source_digest": "a8075a9a25dae42b81d5f2742109f547bdb1a2c56fc7fbe967324d98aa7c35b1",
     "status": "settled"
-  }
+  },
+  "points": {
+    "impact_points": "0",
+    "initial_points": "500",
+    "mode": "contribution points on this Intelligent Contract",
+    "note_points": "0",
+    "points": "500",
+    "problem": "post-quantum-signatures",
+    "returned_points": "100",
+    "total_award_budgets": "500",
+    "total_awarded": "500",
+    "total_impact_points": "0",
+    "total_initial_points": "500",
+    "total_note_points": "0",
+    "total_reserved_points": "0",
+    "total_returned_points": "100",
+    "transferable": false
+  },
+  "completedAt": "2026-11-27T23:24:24.602Z"
 }

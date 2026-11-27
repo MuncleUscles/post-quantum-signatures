@@ -96563,7 +96563,8 @@
         "method": "adjudicate",
         "argsSha256": "f4a6afec6922d91cac5f5da06d54147886c62a4486938b7830346b8bba59371a",
         "independent": true
-      }
+      },
+      "hash": "0x022876d2a63c5b55a5901a445f65e6a00acd80f87c3ab3b29a3c6c658ad5fc31"
     }
   },
   "startedAt": "2026-11-27T23:08:08.589Z",
@@ -96838,7 +96839,7 @@
   },
   "blockedConsensus": false,
   "error": "fetch failed",
-  "updatedAt": "2026-11-27T23:15:43.766Z",
+  "updatedAt": "2026-11-27T23:15:50.003Z",
   "run": "https://github.com/MuncleUscles/post-quantum-signatures/actions/runs/46080518960",
   "record": {
     "adjudication_finished_round": -1,

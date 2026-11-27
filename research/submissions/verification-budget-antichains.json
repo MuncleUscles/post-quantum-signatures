@@ -1,0 +1,77 @@
+{
+  "schema_version": 3,
+  "problem": "post-quantum-signatures",
+  "kind": "lemma",
+  "title": "The exact 442-step verification threshold for 66 sixteen-position hash chains",
+  "claim": "Budget.cutoff proves that a deterministic incomparable encoding of all 2^256 digests into 66 chains with 16 positions exists with worst-case verification budget b exactly when 442 ≤ b. Each coordinate is the number of forward steps remaining. Complementing all digits recovers the usual signing positions and preserves incomparability. The lower bound covers encoders mixing ranks. At budget 442 an encoder can use exactly 442 verification and 548 signing steps for every digest. The central rank uses 495 of each. Both encodings contain 66 chain elements, or 2,112 bytes at 32 bytes per element.",
+  "novelty": "The track gives an unrestricted middle-rank capacity and the minimum chain count. This proof gives the exact worst-case verification cutoff at that chain count. Budget.sharp_budget projects an arbitrary cost-capped message antichain along symmetric chains to one fixed rank without merging messages. Budget.exact_capacity converts the result to an executable integer test for any bounded equal-chain grid below its midpoint. Budget.cutoff instantiates it with a carry-free packed polynomial and kernel arithmetic. Independent convolution and inclusion-exclusion give capacities 112101650233209645042019189632703548151609162860367953232562543460027527343276 and 116447303614810365777943216526551517424194884344492365343285200720362736940186 at 441 and 442, respectively.",
+  "prior_art": [
+    {
+      "reference": "https://research.tue.nl/en/publications/on-the-set-of-divisors-of-a-number/",
+      "relationship": "The classical symmetric-chain decomposition of a product of chains supplies the combinatorial method. The Lean rectangle decomposition, inverse coordinate maps and cost-capped projection were written for this submission."
+    },
+    {
+      "reference": "https://eprint.iacr.org/2023/850",
+      "relationship": "Constant-sum Winternitz and optimal signature length are established prior work. This paper also credits Bos and Chaum for constant-sum encoding."
+    },
+    {
+      "reference": "https://eprint.iacr.org/2025/889",
+      "relationship": "Prior verification-cost bounds and constructions include randomized and non-injective settings. This formalization addresses the deterministic worst-case antichain subproblem."
+    },
+    {
+      "reference": "https://www.rfc-editor.org/rfc/rfc8391.html#section-3.1",
+      "relationship": "WOTS+ baseline and chain-cost conventions. At n=32, w=16 it uses 67 elements or 2,144 bytes. Its checksum encoding has a different work profile."
+    }
+  ],
+  "research_direction": "Optimize worst-case verification work at a fixed signature length for deterministic injective hash-chain encodings.",
+  "provenance": {
+    "mode": "formalization",
+    "sources": [
+      {
+        "reference": "https://research.tue.nl/en/publications/on-the-set-of-divisors-of-a-number/",
+        "title": "On the set of divisors of a number",
+        "authors": [
+          "N. G. de Bruijn",
+          "C. van Ebbenhorst Tengbergen",
+          "D. Kruyswijk"
+        ],
+        "relationship": "The classical symmetric-chain decomposition of a product of chains supplies the combinatorial method. The Lean rectangle decomposition, inverse coordinate maps and cost-capped projection were written for this submission.",
+        "priority_evidence": "Nieuw Archief voor Wiskunde (1951)."
+      },
+      {
+        "reference": "https://eprint.iacr.org/2023/850",
+        "title": "Revisiting the Constant-sum Winternitz One-time Signature with Applications to SPHINCS+ and XMSS",
+        "authors": [
+          "Kaiyi Zhang",
+          "Hongrui Cui",
+          "Yu Yu"
+        ],
+        "relationship": "Constant-sum Winternitz and optimal signature length are established prior work. This paper also credits Bos and Chaum for constant-sum encoding.",
+        "priority_evidence": "IACR ePrint 2023/850."
+      },
+      {
+        "reference": "https://eprint.iacr.org/2025/889",
+        "title": "At the Top of the Hypercube – Better Size-Time Tradeoffs for Hash-Based Signatures",
+        "authors": [
+          "Dmitry Khovratovich",
+          "Mikhail Kudinov",
+          "Benedikt Wagner"
+        ],
+        "relationship": "Prior verification-cost bounds and constructions include randomized and non-injective settings. This formalization addresses the deterministic worst-case antichain subproblem.",
+        "priority_evidence": "IACR ePrint 2025/889."
+      }
+    ],
+    "discovery_basis": "I compared the problem brief, published constant-sum and hypercube results, the public research branch and PR history. I claim authorship of this Lean formalization and parameter calculation. I do not claim priority for the chain decomposition, fixed-sum encoding, coefficient-packing technique or underlying combinatorial bound."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/verification-budget-antichains.json",
+    "reproduce": "Run pnp check research/submissions/verification-budget-antichains.json --lean with the project-pinned verifier. For an independent arithmetic check, start with a[0]=1 and convolve 66 times with sixteen ones. Compare entries 441 and 442 to 2^256."
+  },
+  "dependencies": [],
+  "attribution": {
+    "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
+    "contributions": "Codex, working for Edgars under the repository owner account MuncleUscles, wrote the decomposition and its inverse, bounded-budget equivalence, exhaustive grid specification, carry-free coefficient proof and concrete cutoff. The signer is the existing project contributor wallet. No credited proof bundles are imported."
+  },
+  "limitations": "The theorem counts forward chain steps. It omits encoder work, key generation, authentication paths and aggregation costs. Its existence witness enumerates a finite rank and is unsuitable as a production encoder. Each verification step saved relative to the middle rank adds a signing step. Randomized encoders, collisions, expected cost, unequal chains, unforgeability against quantum adversaries and end-to-end performance require separate analysis."
+}
